@@ -1,0 +1,99 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --navbar-width: 0px;
+}
+
+.viewer {
+  position: absolute !important;
+  left: var(--navbar-width);
+  top: var(--navbar-width);
+  /* width: calc(100% - var(--navbar-width)); */
+  height: calc(100% - var(--navbar-width));
+  width: 500px;
+  height: 500px;
+  overscroll-behavior: none;
+  will-change: scroll-position;
+  overflow: hidden;
+}
+
+.infinite-viewer-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  will-change: scroll-position;
+}
+
+.infinite-viewer-scroll-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+
+  width: calc(100% + 1000px);
+  height: calc(100% + 1000px);
+}
+
+.drag-layer {
+  height: 1500px;
+  width: 1500px;
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 999999;
+  transform-origin: top left;
+  overflow: hidden;
+}
+
+.workspace {
+  background-color: #eeeeee;
+  height: 1500px;
+  width: 1500px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform-origin: top left;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.pin {
+  position: absolute;
+  transform-origin: center;
+}
+
+.sticky {
+  background-color: yellow;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.canvas {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  border: 4px solid #262728;
+  user-select: none;
+}
